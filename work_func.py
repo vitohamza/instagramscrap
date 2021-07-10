@@ -10,12 +10,11 @@ def encodejson(link, standard = 'ascii'):
     driver.get(link)
     content = (driver.page_source).encode(standard, 'ignore')
     driver.quit()
-    return content
+    
     #beautifulsoup parser
     soup = bs(content)
-    pre = soup.find('pre').content[0]
+    pre = soup.find('pre').contents[0]
     
-
     #print(pre)
     parsed_json = json.loads(pre)
     return parsed_json
