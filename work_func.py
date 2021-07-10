@@ -13,7 +13,7 @@ def encodejson(link, standard = 'ascii'):
 
     #beautifulsoup parser
     soup = bs(content)
-    pre = soup.find('pre').contents[0]
+    pre = soup.find('pre').content[0]
 
     #print(pre)
     parsed_json = json.loads(pre)

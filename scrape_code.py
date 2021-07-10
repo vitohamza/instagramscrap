@@ -5,6 +5,7 @@ import time
 #Autoget profile ID
 profilename = 'himatektro_its'
 instagramlink = 'https://www.instagram.com/'+profilename+'/?__a=1'
+instagramlink = 'https://www.instagram.com/graphql/query/?query_hash=42323d64886122307be10013ad2dcc44&variables=%7B%22id%22:%2232679996816%22,%22first%22:50%7D'
 print(work_func.encodejson(instagramlink))
 
 # idjson = getprofile.json()
