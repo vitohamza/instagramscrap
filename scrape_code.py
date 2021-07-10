@@ -1,12 +1,21 @@
 import work_func
 import pandas as pd
 import time
-
+from bs4 import BeautifulSoup as bs
 #Autoget profile ID
 profilename = 'himatektro_its'
-instagramlink = 'https://www.instagram.com/'+profilename+'/?__a=1'
+#instagramlink = 'https://www.instagram.com/web/search/topsearch/?context=user&count=0&query='+profilename
 instagramlink = 'https://www.instagram.com/graphql/query/?query_hash=42323d64886122307be10013ad2dcc44&variables=%7B%22id%22:%2232679996816%22,%22first%22:50%7D'
-print(work_func.encodejson(instagramlink))
+ab = work_func.encodejson(instagramlink)
+# print(ab)
+#beautifulsoup parser
+soup = bs(ab)
+pre = soup.find('pre').content[0]
+
+
+#print(pre)
+parsed_json = json.loads(pre)
+print(parsed_json)
 
 # idjson = getprofile.json()
 # idnumber = idjson['data']['user']['edge_owner_to_timeline_media']['edges'][0]['node']['owner']['id']
