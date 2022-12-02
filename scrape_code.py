@@ -34,7 +34,7 @@ table.columns = ['Link', 'Caption', 'Comments', 'Likes', 'Image Link', 'Video?',
 print(table)
 
 #convert to csv
-table.to_csv("cigfhttes.csv")
+table.to_csv("output_data.csv")
 
 # define the scope
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
